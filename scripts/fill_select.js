@@ -11,7 +11,7 @@ function ajaxSuccess(receivedText) {
     emptySelect();
     populateSelect(optionsArray);
   } catch (e) {
-    alert.log("An error ocurred.\n" + e.message);
+    alert("An error ocurred.\n" + e.message);
   }
 }
 
