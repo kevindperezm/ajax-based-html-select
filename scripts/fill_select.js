@@ -1,4 +1,6 @@
-function fillE
+function fillSelect(select) {
+  getByAjax('options.json', ajaxSuccess);
+}
 
 function getByAjax(resource_url, success_callback) {
   var xmlhttp;
