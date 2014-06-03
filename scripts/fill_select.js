@@ -1,7 +1,7 @@
 var selectToFill = null; // global that saves the reference to the empty select
 
 function fillSelect(select) {
-  selectToFill = select;
+  selectToFill = document.getElementById(select);
   getByAjax('options.json', ajaxSuccess);
 }
 
