@@ -1,5 +1,17 @@
+var selectToFill = null;
+
 function fillSelect(select) {
+  selectToFill = select;
   getByAjax('options.json', ajaxSuccess);
+}
+
+function ajaxSuccess(receivedText) {
+  try {
+    var optionsArray = JSON.parse(receivedText);
+    populateSelect(optionsArray);
+  } catch (e) {
+    alert.log("An error ocurred.\n" + e.message);
+  }
 }
 
 function getByAjax(resource_url, success_callback) {
