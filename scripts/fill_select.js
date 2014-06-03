@@ -1,4 +1,4 @@
-var selectToFill = null;
+var selectToFill = null; // global that saves the reference to the empty select
 
 function fillSelect(select) {
   selectToFill = select;
@@ -11,6 +11,15 @@ function ajaxSuccess(receivedText) {
     populateSelect(optionsArray);
   } catch (e) {
     alert.log("An error ocurred.\n" + e.message);
+  }
+}
+
+function populateSelect(array) {
+  for (var i = 0; i < array.length; i++) {
+    option = document.createElement('option');
+    option.value = array[i];
+    option.text = array[i];
+    selectToFill.appendChild(option);
   }
 }
 
