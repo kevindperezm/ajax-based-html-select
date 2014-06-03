@@ -1,4 +1,6 @@
-function get_by_ajax(resource_url, success_callback) {
+function fillE
+
+function getByAjax(resource_url, success_callback) {
   var xmlhttp;
 
   if (window.XMLHttpRequest) {
