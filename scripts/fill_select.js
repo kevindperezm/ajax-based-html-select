@@ -8,9 +8,17 @@ function fillSelect(select) {
 function ajaxSuccess(receivedText) {
   try {
     var optionsArray = JSON.parse(receivedText);
+    emptySelect();
     populateSelect(optionsArray);
   } catch (e) {
     alert.log("An error ocurred.\n" + e.message);
+  }
+}
+
+function emptySelect() {
+  childNodes = selectToFill.childNodes;
+  for (var i = childNodes.length - 1; i >= 0; i--) {
+    selectToFill.removeChild(childNodes[i]);
   }
 }
 
